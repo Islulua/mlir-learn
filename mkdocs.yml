@@ -1,0 +1,86 @@
+site_name: MLIR 学习笔记
+site_description: 个人MLIR学习笔记和心得
+site_author: MLIR Learner
+site_url: https://your-username.github.io/mlir-learn
+
+# 主题配置
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: 切换到深色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: 切换到浅色模式
+
+# 导航结构
+nav:
+  - 首页: index.md
+  - MLIR基础:
+    - 概述: mlir-basics/overview.md
+    - 方言系统: mlir-basics/dialects.md
+    - 操作和类型: mlir-basics/ops-and-types.md
+  - 实践案例:
+    - 简单方言定义: examples/simple-dialect.md
+    - 自定义操作: examples/custom-ops.md
+    - 转换Pass: examples/transformation-pass.md
+  - 高级主题:
+    - 模式匹配: advanced/pattern-matching.md
+    - 类型推导: advanced/type-inference.md
+    - 优化策略: advanced/optimization.md
+  - 参考资料:
+    - 常用API: reference/common-apis.md
+    - 最佳实践: reference/best-practices.md
+    - 常见问题: reference/faq.md
+
+# 插件配置
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [../src]
+          options:
+            show_source: true
+            show_root_heading: true
+
+# 额外配置
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-username/mlir-learn
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+
+# 构建配置
+docs_dir: docs
+site_dir: site
+
+# 国际化
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js 
