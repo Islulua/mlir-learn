@@ -1,0 +1,5 @@
+# 排除图片目录中的 README 文件
+docs/images/README.md
+# 排除其他不需要的目录
+*.tmp
+*.log 

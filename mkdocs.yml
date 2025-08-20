@@ -40,6 +40,10 @@ plugins:
 docs_dir: docs
 site_dir: site
 
+# 排除文件
+exclude_docs: |
+  images/README.md
+
 # 额外配置
 extra:
   social:

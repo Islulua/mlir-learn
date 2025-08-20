@@ -60,10 +60,22 @@ read -r response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     echo ""
     echo "🚀 启动本地服务器..."
-    echo "📖 在浏览器中打开: http://127.0.0.1:8000"
+    
+    # 检查端口是否被占用
+    PORT=8000
+    while lsof -Pi :$PORT -sTCP:LISTEN -t >/dev/null 2>&1; do
+        echo "⚠️  端口 $PORT 已被占用，尝试端口 $((PORT + 1))"
+        PORT=$((PORT + 1))
+        if [ $PORT -gt 8010 ]; then
+            echo "❌ 无法找到可用端口，请手动关闭占用端口的进程"
+            exit 1
+        fi
+    done
+    
+    echo "📖 在浏览器中打开: http://127.0.0.1:$PORT"
     echo "⏹️  按 Ctrl+C 停止服务器"
     echo ""
-    mkdocs serve
+    mkdocs serve -a 127.0.0.1:$PORT
 else
     echo ""
     echo "💡 提示:"
