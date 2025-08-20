@@ -28,7 +28,7 @@ theme:
       accent: indigo
       toggle:
         icon: material/toggle-switch
-        name: 切换到浅色模式
+        name: 切换到深色模式
 
 # 导航结构
 nav:
@@ -57,26 +57,16 @@ plugins:
       minify_html: true
   - git-revision-date-localized:
       enable_creation_date: true
-  - mkdocstrings:
-      handlers:
-        python:
-          paths: [../src]
-          options:
-            show_source: true
-            show_root_heading: true
+
+# 构建配置
+docs_dir: docs
+site_dir: site
 
 # 额外配置
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/islulua/mlir-learn
-  analytics:
-    provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
-
-# 构建配置
-docs_dir: docs
-site_dir: site
 
 # 国际化
 extra_css:
