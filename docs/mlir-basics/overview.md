@@ -1,5 +1,9 @@
 # MLIR 概述
 
+![MLIR 处理流程](../images/test.jpeg)
+
+*上图展示了 MLIR 的基本处理流程：从输入到 MLIR 处理再到输出的完整流程*
+
 ## 什么是 MLIR？
 
 MLIR (Multi-Level Intermediate Representation) 是 LLVM 项目的一部分，它是一个可扩展的编译器基础设施，专门设计用于构建可重用的编译器组件。

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  
+  <!-- 标题 -->
+  <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#495057">
+    MLIR 示例图
+  </text>
+  
+  <!-- 输入 -->
+  <rect x="50" y="80" width="80" height="40" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="5"/>
+  <text x="90" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1976d2">输入</text>
+  
+  <!-- 箭头 -->
+  <path d="M 140 100 L 180 100" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- 处理 -->
+  <rect x="190" y="80" width="80" height="40" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="5"/>
+  <text x="230" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#7b1fa2">MLIR</text>
+  
+  <!-- 箭头 -->
+  <path d="M 280 100 L 320 100" stroke="#666" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- 输出 -->
+  <rect x="330" y="80" width="80" height="40" fill="#e8f5e8" stroke="#4caf50" stroke-width="2" rx="5"/>
+  <text x="370" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#388e3c">输出</text>
+  
+  <!-- 说明文字 -->
+  <text x="200" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#666">
+    这是一个简单的 MLIR 处理流程示例
+  </text>
+  
+  <!-- 箭头标记定义 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg> 
