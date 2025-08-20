@@ -5,30 +5,8 @@ site_url: https://islulua.github.io/mlir-learn
 
 # 主题配置
 theme:
-  name: material
+  name: windmill
   language: zh
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - search.highlight
-    - search.share
-    - content.code.copy
-    - content.code.annotate
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: 切换到深色模式
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch
-        name: 切换到深色模式
 
 # 导航结构
 nav:
