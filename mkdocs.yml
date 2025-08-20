@@ -14,7 +14,7 @@ nav:
   - MLIR基础:
     - 概述: mlir-basics/overview.md
     - 方言系统: mlir-basics/dialects.md
-    - 操作和类型: mlir-basics/ops-and-types.md
+    - 操作和类型: mlir-basics/dive-into-operation.md
   - 实践案例:
     - 简单方言定义: examples/simple-dialect.md
     - 自定义操作: examples/custom-ops.md
