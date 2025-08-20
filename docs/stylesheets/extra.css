@@ -1,145 +1,238 @@
-/* MLIR 学习笔记自定义样式 */
+/* 额外的CSS样式 */
 
 /* 代码块样式 */
-.mlir-code {
-  background-color: #f8f9fa;
-  border-left: 4px solid #007acc;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 4px;
+.md-typeset pre {
+    background-color: #f5f5f5;
+    border-left: 4px solid #2196F3;
+    padding: 1em;
+    margin: 1em 0;
 }
 
-/* MLIR 语法高亮 */
-.mlir-keyword {
-  color: #d73a49;
-  font-weight: bold;
+/* 内联代码样式 */
+.md-typeset code {
+    background-color: #f5f5f5;
+    color: #d73a49;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
 }
 
-.mlir-operator {
-  color: #6f42c1;
-}
-
-.mlir-type {
-  color: #005cc5;
-}
-
-.mlir-value {
-  color: #e36209;
-}
-
-/* 表格样式优化 */
+/* 表格样式 */
 .md-typeset table {
-  border-collapse: collapse;
-  width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
 }
 
-.md-typeset table th {
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+.md-typeset th,
+.md-typeset td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
 
-.md-typeset table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+.md-typeset th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* 引用块样式 */
+.md-typeset blockquote {
+    border-left: 4px solid #2196F3;
+    padding-left: 1em;
+    margin: 1em 0;
+    color: #666;
 }
 
 /* 警告框样式 */
-.warning-box {
-  background-color: #fff3cd;
-  border: 1px solid #ffeaa7;
-  border-left: 4px solid #f39c12;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 4px;
+.warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
 }
 
-.warning-box::before {
-  content: "⚠️ ";
-  font-weight: bold;
-  color: #856404;
+.warning::before {
+    content: "⚠️ ";
+    font-weight: bold;
 }
 
 /* 信息框样式 */
-.info-box {
-  background-color: #d1ecf1;
-  border: 1px solid #bee5eb;
-  border-left: 4px solid #17a2b8;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 4px;
+.info {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
 }
 
-.info-box::before {
-  content: "ℹ️ ";
-  font-weight: bold;
-  color: #0c5460;
+.info::before {
+    content: "ℹ️ ";
+    font-weight: bold;
 }
 
 /* 成功框样式 */
-.success-box {
-  background-color: #d4edda;
-  border: 1px solid #c3e6cb;
-  border-left: 4px solid #28a745;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 4px;
+.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
 }
 
-.success-box::before {
-  content: "✅ ";
-  font-weight: bold;
-  color: #155724;
+.success::before {
+    content: "✅ ";
+    font-weight: bold;
 }
 
-/* 代码示例标题 */
-.code-example-title {
-  background-color: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-bottom: none;
-  padding: 0.5rem 1rem;
-  margin: 1rem 0 0 0;
-  border-radius: 4px 4px 0 0;
-  font-weight: bold;
-  color: #495057;
+/* 错误框样式 */
+.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
 }
 
-/* 导航优化 */
+.error::before {
+    content: "❌ ";
+    font-weight: bold;
+}
+
+/* 导航样式 */
 .md-nav__link {
-  transition: color 0.2s ease;
+    color: #333;
+    text-decoration: none;
 }
 
 .md-nav__link:hover {
-  color: #007acc;
+    color: #2196F3;
+    text-decoration: underline;
 }
 
 /* 搜索框样式 */
 .md-search__input {
-  border-radius: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
 }
 
-/* 响应式优化 */
+.md-search__input:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+/* 按钮样式 */
+.md-button {
+    background-color: #2196F3;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5em 0;
+}
+
+.md-button:hover {
+    background-color: #1976D2;
+}
+
+/* 卡片样式 */
+.md-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5em;
+    margin: 1em 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.md-card h3 {
+    margin-top: 0;
+    color: #2196F3;
+}
+
+/* 标签样式 */
+.md-tag {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    padding: 0.2em 0.6em;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin: 0 0.2em;
+}
+
+/* 进度条样式 */
+.md-progress {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    height: 8px;
+    margin: 1em 0;
+    overflow: hidden;
+}
+
+.md-progress-bar {
+    background-color: #2196F3;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+/* 工具提示样式 */
+.md-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.md-tooltip .md-tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.md-tooltip:hover .md-tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 响应式设计 */
 @media (max-width: 768px) {
-  .md-content {
-    padding: 1rem;
-  }
-  
-  .md-typeset table {
-    font-size: 0.9rem;
-  }
+    .md-typeset table {
+        font-size: 0.8em;
+    }
+    
+    .md-card {
+        padding: 1em;
+    }
+    
+    .md-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* 打印样式 */
 @media print {
-  .md-nav,
-  .md-search,
-  .md-header {
-    display: none;
-  }
-  
-  .md-content {
-    margin: 0;
-    padding: 0;
-  }
+    .md-nav,
+    .md-search,
+    .md-button {
+        display: none;
+    }
+    
+    .md-typeset {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
 } 
