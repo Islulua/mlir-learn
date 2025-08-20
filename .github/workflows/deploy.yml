@@ -1,85 +1,40 @@
-name: Deploy MLIR Learning Notes
+name: Deploy MLIR Docs to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, master ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
+    - name: Checkout
       uses: actions/checkout@v4
-      
+      with:
+        fetch-depth: 0  # 获取完整的 Git 历史用于时间戳插件
+    
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
-        
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        
-    - name: Build website
-      run: mkdocs build
-      
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: website
-        path: site/
-        
-    - name: Test build
-      run: |
-        # 检查构建结果
-        if [ ! -d "site" ]; then
-          echo "❌ 构建失败：未找到 site 目录"
-          exit 1
-        fi
-        
-        # 检查关键文件
-        if [ ! -f "site/index.html" ]; then
-          echo "❌ 构建失败：未找到 index.html"
-          exit 1
-        fi
-        
-        echo "✅ 构建测试通过"
-        
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        
+    
     - name: Build website
       run: mkdocs build
-      
+    
     - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./site
         publish_branch: gh-pages
-        cname: # 如果有自定义域名，在这里设置
-        
-    - name: Notify deployment
-      run: |
-        echo "🚀 MLIR 学习笔记已部署到 GitHub Pages"
-        echo "🌐 网站地址: https://${{ github.repository_owner }}.github.io/mlir-learn" 
+        cname: # 如果你有自定义域名，在这里填写
+        force_orphan: true 
