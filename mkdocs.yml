@@ -1,11 +1,11 @@
-site_name: MLIR 学习笔记
+site_name: readthedocs 学习笔记
 site_description: 个人MLIR学习笔记和心得
 site_author: MLIR Learner
 site_url: https://islulua.github.io/mlir-learn
 
 # 主题配置
 theme:
-  name: windmill
+  name: readthedocs
   language: zh
 
 # 导航结构
