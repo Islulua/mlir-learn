@@ -1,53 +1,55 @@
-name: Deploy MLIR Docs to GitHub Pages
+name: Deploy MLIR Learning Notes
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
+  workflow_dispatch:
 
-# 设置权限
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 允许一个并发部署
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout
+    - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0  # 获取完整的 Git 历史用于时间戳插件
-    
+      
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
-    
+        python-version: '3.9'
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    
+        
     - name: Build website
       run: mkdocs build
-    
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-    
+      
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./site
+        
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
     
+    steps:
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      id: deployment
       uses: actions/deploy-pages@v4 
