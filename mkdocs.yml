@@ -13,6 +13,7 @@ nav:
   - 首页: index.md
   - MLIR基础:
     - Operation: mlir-basics/dive-into-operation.md
+    - Attributes: mlir-basics/dive-into-attributes.md
   # - 实践案例:
   #   - 简单方言定义: examples/simple-dialect.md
   #   - 自定义操作: examples/custom-ops.md
