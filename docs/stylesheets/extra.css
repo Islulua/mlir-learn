@@ -333,3 +333,33 @@
         line-height: 1.4;
     }
 } 
+
+/* 图片浮空阴影效果 */
+img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    margin: 20px auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 图片悬停效果 */
+img:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+}
+
+/* 确保图片居中显示 */
+img[alt*="Operation"] {
+    margin: 20px auto;
+}
+
+/* 为特定图片添加额外样式 */
+img[alt*="结构"],
+img[alt*="定义"],
+img[alt*="Storage"] {
+    border: 1px solid #e1e4e8;
+    background: #ffffff;
+} 

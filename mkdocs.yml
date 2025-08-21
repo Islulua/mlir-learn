@@ -12,21 +12,19 @@ theme:
 nav:
   - 首页: index.md
   - MLIR基础:
-    - 概述: mlir-basics/overview.md
-    - 方言系统: mlir-basics/dialects.md
-    - 操作和类型: mlir-basics/dive-into-operation.md
-  - 实践案例:
-    - 简单方言定义: examples/simple-dialect.md
-    - 自定义操作: examples/custom-ops.md
-    - 转换Pass: examples/transformation-pass.md
-  - 高级主题:
-    - 模式匹配: advanced/pattern-matching.md
-    - 类型推导: advanced/type-inference.md
-    - 优化策略: advanced/optimization.md
-  - 参考资料:
-    - 常用API: reference/common-apis.md
-    - 最佳实践: reference/best-practices.md
-    - 常见问题: reference/faq.md
+    - Operation: mlir-basics/dive-into-operation.md
+  # - 实践案例:
+  #   - 简单方言定义: examples/simple-dialect.md
+  #   - 自定义操作: examples/custom-ops.md
+  #   - 转换Pass: examples/transformation-pass.md
+  # - 高级主题:
+  #   - 模式匹配: advanced/pattern-matching.md
+  #   - 类型推导: advanced/type-inference.md
+  #   - 优化策略: advanced/optimization.md
+  # - 参考资料:
+  #   - 常用API: reference/common-apis.md
+  #   - 最佳实践: reference/best-practices.md
+  #   - 常见问题: reference/faq.md
 
 # 插件配置
 plugins:
